@@ -1,0 +1,104 @@
+:root {
+    --bg-primary: #ffffff;
+    --text-primary: #111111;
+    --text-secondary: #666666;
+    --accent-dark: #000000;
+    --border-color: #e5e7eb;
+    --hover-shadow: rgba(0, 0, 0, 0.08);
+    --font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+#heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto 0;
+}
+
+#choice1, #choice2, #choice3 {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#choice1 { background-image: url("rock.png"); }
+#choice2 { background-image: url("paper.png"); }
+#choice3 { background-image: url("scissors.jpg"); }
+
+#choice1:hover, #choice2:hover, #choice3:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-dark);
+    box-shadow: 0 10px 20px var(--hover-shadow);
+}
+
+.results {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin: 30px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 40px;
+}
+
+#user, #comp {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-secondary);
+}
+
+#user {
+    color: var(--text-primary);
+}
+
+#conclusion {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: var(--bg-primary);
+    background-color: var(--accent-dark);
+    min-width: 280px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
